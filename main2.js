@@ -144,22 +144,24 @@ function countNeighbors(arrayCheck,x,y){
 
 
 function doaFunction(cell) {
+    let neighborsCT;
     //console.log(cell);
     if (cell.getNeighbors() < 2) {
         //newArray[x][y].setStatus(0);         // Soledad
-        return 0;
+        neighborsCT= 0;
     } else if (cell.getNeighbors() > 3) {
       //  newArray[x][y].setStatus(0);         // Sobrepoblación
-        return 0;
+      neighborsCT= 0;
     } else if ((cell.getStatus() === 1) && ((cell.getNeighbors() === 2) || (cell.getNeighbors() === 3)) ) {
         //newArray[x][y].setStatus(1);         // Reproducción
-        return 1;
+        neighborsCT= 1;
     } else if (cell.getStatus() === 0 && (cell.getNeighbors() === 3)){
         //newArray[x][y].setStatus(1);         // same
-        return 1;
+        neighborsCT = 1;
     }else if (cell.getStatus() === 0 && (cell.getNeighbors() != 3)){
-        return 0;
+        neighborsCT=  0;
     }
+    return neighborsCT;
     // else{
     //     return 0;
     // }
