@@ -170,7 +170,7 @@ function showResult(array){
     resultBoard = '';
     for (let x = 0; x < array.length; x++) {
         for (let y = 0; y < array[x].length; y++) {
-            resultBoard += cellSymbol(arrayCells[x][y].getStatus());
+            resultBoard += cellSymbol(array[x][y].getStatus());
         }
         resultBoard += '\n';
     }
